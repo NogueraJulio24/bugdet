@@ -18,6 +18,7 @@ const Stack = createStackNavigator();
 
 //Screens
 import Dashboard from './src/screens/Dashboard';
+import Registers from './src/screens/Registers';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <FirebaseState>
         <NavigationContainer>
           <Stack.Navigator
+            initialRouteName="Dashboard"
             screenOptions={{
               headerStyle: {
                 backgroundColor: '#FFDA00'
@@ -34,6 +36,14 @@ const App = () => {
               }
             }}
           >
+            <Stack.Screen 
+              name="Registers"
+              component={Registers}
+              options={{
+                title: "Registro"
+              }}
+            />
+
             <Stack.Screen 
               name="Dashboard"
               component={Dashboard}
