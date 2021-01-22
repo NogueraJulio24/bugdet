@@ -7,13 +7,17 @@
  */
 
 import 'react-native-gesture-handler';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+
 import React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import FirebaseState from './src/context/firebase/firebaseState';
 
+const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
 //Screens
@@ -24,36 +28,16 @@ const App = () => {
   return (
     <>
       <FirebaseState>
+
+      <Container>
         <NavigationContainer>
-          <Stack.Navigator
-            initialRouteName="Dashboard"
-            screenOptions={{
-              headerStyle: {
-                backgroundColor: '#FFDA00'
-              },
-              headerTitleStyle:{
-                fontWeight: 'bold'
-              }
-            }}
-          >
-            <Stack.Screen 
-              name="Registers"
-              component={Registers}
-              options={{
-                title: "Registro"
-              }}
-            />
-
-            <Stack.Screen 
-              name="Dashboard"
-              component={Dashboard}
-              options={{
-                title: "Inicio"
-              }}
-            />
-
-          </Stack.Navigator>
+          
+          <Drawer.Navigator initialRouteName="Registers">
+            <Drawer.Screen name="Dashboard" component={Dashboard} />
+            <Drawer.Screen name="Registers" component={Registers} />
+          </Drawer.Navigator>
         </NavigationContainer>
+      </ Container>
       </FirebaseState>
     </>
   );

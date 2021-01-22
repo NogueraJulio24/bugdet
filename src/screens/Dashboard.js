@@ -1,9 +1,14 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text } from 'native-base';
+
+import Header from '../components/Header';
 
 const Dashboard = () => {
     return (
-        <Text>Dashboard</Text>
+        <>
+            <Header/>
+            <Text>Hola</Text>
+        </>
     )
 }
 export default Dashboard;

@@ -1,16 +1,13 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
+
+import Header from '../components/Header';
+
 import { Container, Button, Text } from 'native-base';
 
 const Registers = () => {
-    return (
-        <Container>
-            <View>
-                <Button>
-                    <Text>Crear Registro</Text>
-                </Button>
-            </View>
-        </Container>
+    return (        
+        <Header></Header>
     )
 }
 export default Registers;
